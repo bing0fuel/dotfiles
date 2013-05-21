@@ -29,7 +29,7 @@ shopt -s checkwinsize
 # not when the terminal is closed (For multi-session)
 PROMPT_COMMAND='history -a'
 
-# Basic aliases.
+# Basic aliases
 alias ll='ls -alF'
 alias la='ls -lah'
 alias l='ls -CF'
@@ -39,6 +39,10 @@ alias fgrep='fgrep --color=auto'
 alias mysql='mysql --prompt '\''\h:\d\n> '\'''
 alias screen='export TERM=screen';
 alias phpgrep='find . -name "*.php" -print | xargs -l10 grep --color '
+
+# Laziness for Git
+alias gits='git status'
+alias gitb='git branch'
 
 # Set tmux default path to current directory
 alias tmuxdir='tmux set-option default-path "$PWD"'
@@ -52,3 +56,6 @@ fi
 if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
+
+# VI Mode
+set -o vi
