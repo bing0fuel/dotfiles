@@ -4,8 +4,12 @@ execute pathogen#infect()
 syntax on
 filetype plugin indent on
 
-"Use vim settings
+" Use vim settings
 set nocompatible	
+
+" Use F12 to do no-smarty paste
+set pastetoggle=<F2>
+
 
 " Indentation stuff
 set autoindent
@@ -21,7 +25,7 @@ set clipboard=unnamed
 " Stop making noise!!!
 set noerrorbells
 
-" Allow copying outside vim
+" Allow mouse 
 set mouse=a
 
 " Highlight search
@@ -56,6 +60,10 @@ syn on
 if v:lang =~ "utf8$" || v:lang =~ "UTF-8$"
    set fileencodings=utf-8,latin1
 endif
+
+" Set list-chars to show ugly whitespace related things
+set list
+set listchars=tab:>.,trail:.,extends:#,nbsp:.
 
 " Set no wrap and what happens when a line runs off the screen
 set sidescroll=5
