@@ -1,35 +1,49 @@
+" Set nocompatible just in case
+set nocompatible
+
 " Start pathogen
 execute pathogen#infect()
 
+" Enable syntax
 syntax on
 filetype plugin indent on
 
-" Use vim settings
-set nocompatible	
+" Basic settings
+set nowrap        " don't wrap lines
+set tabstop=4     " a tab is four spaces
+set backspace=indent,eol,start
+                  " allow backspacing over everything in insert mode
+set autoindent    " always set autoindenting on
+set copyindent    " copy the previous indentation on autoindenting
+set number        " always show line numbers
+set shiftwidth=4  " number of spaces to use for autoindenting
+set shiftround    " use multiple of shiftwidth when indenting with '<' and '>'
+set showmatch     " set show matching parenthesis
+set ignorecase    " ignore case when searching
+set smartcase     " ignore case if search pattern is all lowercase,
+                  "    case-sensitive otherwise
+set smarttab      " insert tabs on the start of a line according to
+                  "    shiftwidth, not tabstop
+set hlsearch      " highlight search terms
+set incsearch     " show search matches as you type
+set expandtab     " Use spaces instead of tabs when <Tab> pressec
+
+" No more backup/swp files!
+set nobackup
+set noswapfile
 
 " Use F12 to do no-smarty paste
 set pastetoggle=<F2>
-
-
-" Indentation stuff
-set autoindent
-set expandtab
-set smarttab
-set shiftwidth=4
-set softtabstop=4
-set tabstop=4
 
 " Use system clipboard
 set clipboard=unnamed
 
 " Stop making noise!!!
+set visualbell
 set noerrorbells
 
 " Allow mouse 
 set mouse=a
-
-" Highlight search
-set hlsearch
 
 " Show command being run
 set showcmd
@@ -47,11 +61,7 @@ set backspace=2
 set title
 set titlestring=%t\ \(%{expand(\"%:p:h:t\")}\)
 
-" Turn on incremental search
-set incsearch
-
 " Turn on case insensitive search
-set ignorecase
 
 " Turn on syntax highlighting
 syn on
@@ -69,42 +79,38 @@ set listchars=tab:>.,trail:.,extends:#,nbsp:.
 set sidescroll=5
 set sidescrolloff=5
 set listchars+=precedes:«,extends:»
-set nowrap
-
-" allow backspacing over everything in insert mode
-set bs=2		
-
-" always set autoindenting on
-set autoindent
-set smartindent
 
 " Remember last position
 set viminfo='10,\"100,:20,%,n~/.viminfo
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
 
-" keep 100 lines of command line history
-set history=100		
+" Super history and undo
+set history=1000
+set undolevels=1000
 
-" show the cursor position all the time
-set ruler		
+" Ignore these things
+set wildignore=*.swp,*.bak,*.pyc
 
+" Show the cursor position all the time
+set ruler
+
+" Set colors for colorful terminal
 if &term=="screen-256color"
      set t_Co=256
 endif
-
-vmap < <gv
-vmap > >gv
 
 " Remap F1 -> ESC key
 inoremap <F1> <ESC>
 nnoremap <F1> <ESC>
 vnoremap <F1> <ESC>
 
-
-set tags=tags;/
-
 " Start Ctrl-P
 set runtimepath^=~/.vim/bundle/ctrlp.vim
 
 " Nerdtree map
 map <C-d> :NERDTreeToggle<CR>
+
+" Misc
+set tags=tags;/
+vmap < <gv
+vmap > >gv
