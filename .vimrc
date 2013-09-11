@@ -27,6 +27,7 @@ set smarttab      " insert tabs on the start of a line according to
 set hlsearch      " highlight search terms
 set incsearch     " show search matches as you type
 set expandtab     " Use spaces instead of tabs when <Tab> pressec
+set nonumber      " Do not have line numbers
 
 " No more backup/swp files!
 set nobackup
