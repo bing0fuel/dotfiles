@@ -53,8 +53,14 @@ if [ -f ~/.bash_local ]; then
     . ~/.bash_local
 fi
 
+# Bash completion for regular Linux
 if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
+fi
+
+# Bash completion for brew
+if [ -f $(brew --prefix)/etc/bash_completion ]; then
+    . $(brew --prefix)/etc/bash_completion
 fi
 
 # VI Mode
