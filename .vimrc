@@ -29,6 +29,8 @@ set incsearch     " show search matches as you type
 set expandtab     " Use spaces instead of tabs when <Tab> pressec
 set nonumber      " Do not have line numbers
 
+set modeline      " Enable modeline
+
 " No more backup/swp files!
 set nobackup
 set noswapfile

@@ -13,12 +13,6 @@ if [ ! -f .bashrc ]; then
    mv .bashrc .bashrc.old
 fi
 
-# Make .vim directory for link if it doesn't exist
-if [ ! -d .vim ]; then
-    mkdir .vim/
-fi
-
-
 # Link everything
 ln -s dev/dotfiles/.tmux.conf .tmux.conf
 ln -s dev/dotfiles/.bashrc .bashrc
