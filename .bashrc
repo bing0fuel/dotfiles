@@ -62,8 +62,10 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
 fi
 
 # Bash completion for brew
-if [ -f $(brew --prefix)/etc/bash_completion ]; then
-    . $(brew --prefix)/etc/bash_completion
+if [[ `uname` == "Darwin" ]]; then
+    if [ -f $(brew --prefix)/etc/bash_completion ]; then
+        . $(brew --prefix)/etc/bash_completion
+    fi
 fi
 
 # VI Mode
