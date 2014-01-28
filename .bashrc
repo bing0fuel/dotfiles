@@ -47,6 +47,9 @@ alias gitb='git branch'
 # Set tmux default path to current directory
 alias tmuxdir='tmux set-option default-path "$PWD"'
 
+# Ignore cases for completion
+set completion-ignore-case On
+
 
 # Local private bash prefs
 if [ -f ~/.bash_local ]; then
