@@ -44,6 +44,9 @@ alias phpgrep='find . -name "*.php" -print | xargs -l10 grep --color '
 alias gits='git status'
 alias gitb='git branch'
 
+# General laziness
+alias sourceme='source ~/.bashrc'
+
 # Set tmux default path to current directory
 alias tmuxdir='tmux set-option default-path "$PWD"'
 
