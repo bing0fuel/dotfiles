@@ -9,7 +9,7 @@
 cd ~
 
 # Move existing bashrc if it exists. The other files usually do not exist
-if [ ! -f .bashrc ]; then
+if [ -f .bashrc ]; then
    mv .bashrc .bashrc.old
 fi
 
